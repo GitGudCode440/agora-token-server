@@ -55,5 +55,6 @@ const generateAccessToken = (req, resp) => {
 app.get('/access-token', nocache, generateAccessToken)
 
 app.listen(PORT, () => {
-    console.log(`Listening on this port: ${PORT}`)
+    console.log(`Listening on port: ${PORT}`)
+    console.log('Resources: /access-token')
 })
