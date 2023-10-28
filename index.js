@@ -26,16 +26,11 @@ const generateAccessToken = (req, resp) => {
 
     let uid = req.query.uid
 
-    if(!uid || uid == '') {
-        uid = 0
-    }
+    if(!uid || uid == '') uid = 0
+    
+    let role = req.query.role === 'publisher' ? RtcRole.PUBLISHER : RtcRole.SUBSCRIBER
 
-    let role = RtcRole.SUBSCRIBER
-
-    if (req.query.role = 'publisher') {
-        role = RtcRole.PUBLISHER
-    }
-
+    
     let expireTime = req.query.expireTime
 
     if (!expireTime || expireTime == '') {
